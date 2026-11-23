@@ -38,10 +38,10 @@ On Windows with MSVC, CMake and Ninja on PATH, use `build-release.cmd`.
 Run `fltk-cell-gallery` to try the drawers, text editing and checkboxes.
 `--smoke` closes the gallery automatically.
 
-The build uses installed FLTK (`FLTK_DIR`), otherwise pinned FLTK sources.
-CSS support defaults to on: it uses installed fltk-css, a sibling `../fltk-css`
-checkout, or pinned upstream sources. `FLTK_CELL_CSS_SOURCE_DIR` overrides the
-checkout location. Set `FLTK_CELL_WITH_CSS=OFF` for core-only use. The core
+The build uses installed FLTK (`FLTK_DIR`), otherwise FLTK release sources.
+CSS support defaults to on: it uses installed fltk-css or versioned release
+sources. Set `FLTK_CELL_CSS_SOURCE_DIR` explicitly to use a development
+checkout. Set `FLTK_CELL_WITH_CSS=OFF` for core-only use. The core
 depends only on FLTK core/images and the C++ standard library.
 `FLTK_CELL_BUILD_EXAMPLE` and `BUILD_TESTING` control examples and tests.
 
@@ -91,3 +91,17 @@ model changes. For an installed package request `COMPONENTS css` and link
 The first integration is pgadmin-jr's FLTK frontend. Local validation uses
 Windows/MSVC; macOS/Linux have not yet been validated here.
 See [LICENSE](LICENSE). Dependencies retain their own licences.
+
+## Release versions
+
+The current library version is **0.1.0**, identified by tag `v0.1.0`.
+Dependencies use named, tested releases: FLTK **1.4.5** (`release-1.4.5`),
+not a development branch or a moving `latest` reference. Local source/package
+paths remain available for development. Upgrade a dependency deliberately,
+run the tests and publish a new library release when appropriate.
+
+Push the matching `v<project-version>` tag after committing the release sources.
+The workflow tests the platforms first and then creates a GitHub source release.
+For the first release, publish fltk-css before fltk-cell, which depends on its
+`v0.1.0` release. pgadmin-jr consumes those tags after publication. Release tags
+must remain immutable; do not move a published tag to different sources.

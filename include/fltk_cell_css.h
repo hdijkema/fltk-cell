@@ -13,7 +13,7 @@ inline CellStyle cellStyle(const FLTK_Css& css, FLTK_Css_Node node)
     result.border = source.border_color;
     result.selected_background = source.selection_color;
     result.font_size = source.font_size;
-    result.font = source.font_family == "monospace" ? FL_COURIER : FL_HELVETICA;
+    result.font = source.font_family == "monospace" ? FL_COURIER : source.font_family == "serif" ? FL_TIMES : FL_HELVETICA;
     if (source.bold) result.font = static_cast<Fl_Font>(result.font + 1);
     if (source.italic) result.font = static_cast<Fl_Font>(result.font + 2);
     return result;
