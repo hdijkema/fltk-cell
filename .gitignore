@@ -64,5 +64,6 @@ vcpkg_installed/
 *.dwo
 
 # test output & cache
+/build/
 Testing/
 .cache/
