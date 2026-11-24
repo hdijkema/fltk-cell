@@ -1,6 +1,6 @@
 # fltk-cell
 
-A small C++17 cell drawing and editing library for FLTK 1.4 tables. No Qt.
+A small C++17 cell drawing and editing library for FLTK 1.4 tables.
 The application owns its data and selects a drawer for each cell. The library
 does not add another table model or create a widget for every cell.
 
