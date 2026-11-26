@@ -1,0 +1,14 @@
+title: fltk-cell
+url: https://hdijkema.github.io
+baseurl: /fltk-cell
+repository_url: https://github.com/hdijkema/fltk-cell
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-optional-front-matter
+defaults:
+  - scope:
+      path: "**/*.md"
+    values:
+      layout: documentation

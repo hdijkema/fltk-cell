@@ -1,5 +1,10 @@
 # fltk-cell
 
+<img src="docs/assets/logo.svg" width="80" height="80" alt="fltk-cell logo">
+
+[Homepage](https://hdijkema.github.io/fltk-cell/) |
+[API reference and usage examples](docs/API.md)
+
 A small C++17 cell drawing and editing library for FLTK 1.4 tables.
 The application owns its data and selects a drawer for each cell. The library
 does not add another table model or create a widget for every cell.
